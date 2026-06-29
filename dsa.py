@@ -27,6 +27,9 @@ print(fibo(5))'''
 
 '''
 -----------THE TWO SUM PROBLEM------
+first method time complexity of n^2
+we can go nlogn using binary search 
+and then use map to make it for efficient even
 '''
 array = [5,4,7,6,9,7,2]
 target = int(input("enter the target value"))
