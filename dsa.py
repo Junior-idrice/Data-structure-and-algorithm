@@ -1,3 +1,4 @@
+'''
 first = [1,2,3,4,5,6]
 second = []
 n = len(first)
@@ -22,4 +23,15 @@ def fibo(n):
     else:
         return fibo(n-2) + fibo(n-1)
 
-print(fibo(5))
+print(fibo(5))'''
+
+'''
+-----------THE TWO SUM PROBLEM------
+'''
+array = [5,4,7,6,9,7,2]
+target = int(input("enter the target value"))
+
+for i in range(len(array)):
+    for j in range(len(array)):
+        if array[i] + array[j] == target:
+            print(str(array[i]) + " " + str(array[j]))
