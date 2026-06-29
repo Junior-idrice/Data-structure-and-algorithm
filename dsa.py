@@ -31,10 +31,26 @@ first method time complexity of n^2
 we can go nlogn using binary search 
 and then use map to make it for efficient even
 '''
+'''
 array = [5,4,7,6,9,7,2]
 target = int(input("enter the target value"))
 
 for i in range(len(array)):
     for j in range(len(array)):
         if array[i] + array[j] == target:
-            print(str(array[i]) + " " + str(array[j]))
+            print(str(array[i]) + " " + str(array[j]))'''
+# ------ two sum using mapping ------------
+
+def two_sum(array, target):
+    there = {}
+    for i,elt in enumerate(array):
+        complement = target - elt
+
+        if complement in there:
+            return [there[complement], i]
+        there[elt] = i
+
+nums = [7,8,9,6,3]
+target = 9
+
+print(two_sum(nums, target))
