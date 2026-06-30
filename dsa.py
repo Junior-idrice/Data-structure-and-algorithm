@@ -39,8 +39,12 @@ for i in range(len(array)):
     for j in range(len(array)):
         if array[i] + array[j] == target:
             print(str(array[i]) + " " + str(array[j]))'''
-# ------ two sum using mapping ------------
 
+
+
+
+# ------ two sum using mapping ------------
+'''
 def two_sum(array, target):
     there = {}
     for i,elt in enumerate(array):
@@ -53,4 +57,21 @@ def two_sum(array, target):
 nums = [7,8,9,6,3]
 target = 9
 
-print(two_sum(nums, target))
+print(two_sum(nums, target))'''
+
+
+#------------------  letcode 217 --------------------#
+#see if there are any duplicate elements in an array
+
+#-- Brute force approach---
+
+array = [1,5,8,7,8]
+print(len(array))
+array.sort()
+for i in range(len(array)+1):
+    print(i)
+    if array[i] == array[i+1]:
+      print(True)
+    else:
+       continue
+    print(False)
