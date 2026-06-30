@@ -112,6 +112,32 @@ print(find([1,2,7,7,5], 4))'''
 
 
 #--- leetcode 242 given two string s and t, return true if t is an anagram of s, and false otherwise
-
+'''
+Good approach but time complexity of nlogn
 def string(s,t):
+    if len(s) != len(t):
+        return False
+    s = sorted(s)
+    t = sorted(t)
+    return s == t
+
+print(string("listn","silent"))'''
+
+# using the idea of counting the numbers of characters and keep 
+# incrementing or decrementing
+
+
+def anagrams(s,t):
+    alpha = [0]*26
+    if len(s) != len(t):
+        return False
     
+    for i in range(len(s)):
+        alpha[ord(s[i])-ord('a')] += 1
+        alpha[ord(t[i])-ord('a')] -= 1
+
+    for i in alpha:
+        if i !=0:
+            return False
+    return True
+print(anagrams("sam","ams"))

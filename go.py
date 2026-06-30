@@ -1,1 +1,2 @@
-#this is the trying file
+charr = [0]*26
+print(charr)
