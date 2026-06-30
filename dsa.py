@@ -64,7 +64,7 @@ print(two_sum(nums, target))'''
 #see if there are any duplicate elements in an array
 
 #-- Brute force approach---
-
+#this is the first approach of the day
 array = [1,5,8,7,8]
 print(len(array))
 array.sort()
