@@ -63,15 +63,30 @@ print(two_sum(nums, target))'''
 #------------------  letcode 217 --------------------#
 #see if there are any duplicate elements in an array
 
-#-- Brute force approach---
+#--- if use a brute force approach the time complexity will be O(n^2)
+
 #this is the first approach of the day
-array = [1,5,8,7,8]
-print(len(array))
+''''array = [1,5,18,7,118]
 array.sort()
-for i in range(len(array)+1):
-    print(i)
-    if array[i] == array[i+1]:
+for i in range(len(array)):
+    if array[i] == array[i-1]:
       print(True)
+      break
     else:
-       continue
-    print(False)
+       print(False)
+       break'''
+
+'''
+we will solve this using hashsets
+'''
+
+def leetcode(array):
+    elt = set()
+    for i in range(len(array)):
+        if array[i] in elt:
+            return True
+        elt.add(array[i])
+    
+    return False
+
+print(leetcode([4,5]))
