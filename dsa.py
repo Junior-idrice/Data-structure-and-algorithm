@@ -80,7 +80,7 @@ for i in range(len(array)):
 we will solve this using hashsets
 '''
 
-def leetcode(array):
+'''def leetcode(array):
     elt = set()
     for i in range(len(array)):
         if array[i] in elt:
@@ -89,4 +89,22 @@ def leetcode(array):
     
     return False
 
-print(leetcode([4,5]))
+print(leetcode([4,5]))'''
+
+
+
+#--- Given an integer array nums and an integer k, return 
+#true if there are two distinct indives i and j in the array such 
+#such that nums[i] == nums[j] and abs(i-j)<=k
+
+
+def find(nums, k):
+    element = set()
+    for i in range(len(nums)):
+        if nums[i] in element:
+            return True
+        element.add(nums[i])
+        if len(element)>k:
+            element.remove(nums[i-k])
+    return False
+print(find([1,2,7,7,5], 4))
