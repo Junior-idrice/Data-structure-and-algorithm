@@ -96,9 +96,9 @@ print(leetcode([4,5]))'''
 #--- Given an integer array nums and an integer k, return 
 #true if there are two distinct indives i and j in the array such 
 #such that nums[i] == nums[j] and abs(i-j)<=k
+# using hashset
 
-
-def find(nums, k):
+'''def find(nums, k):
     element = set()
     for i in range(len(nums)):
         if nums[i] in element:
@@ -107,4 +107,11 @@ def find(nums, k):
         if len(element)>k:
             element.remove(nums[i-k])
     return False
-print(find([1,2,7,7,5], 4))
+print(find([1,2,7,7,5], 4))'''
+
+
+
+#--- leetcode 242 given two string s and t, return true if t is an anagram of s, and false otherwise
+
+def string(s,t):
+    
