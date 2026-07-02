@@ -147,9 +147,10 @@ print(anagrams("sam","ams"))'''
 #you can return the answer in any order
 
 
-ara = ['li','em','li','po','em','lp','li']
-print(ara)
-for i in ara:
-    i = sorted(i)
-    ara.append(i)
-print(ara)
+def Anagram(strs):
+    if len(str) == 0:
+        return []
+    ansmap = {}
+    count = [0]*26
+    for c in strs:
+        count[ord(c)- 'a'] +=1 
