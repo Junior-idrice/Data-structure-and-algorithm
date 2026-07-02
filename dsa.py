@@ -147,10 +147,39 @@ print(anagrams("sam","ams"))'''
 #you can return the answer in any order
 
 
-def Anagram(strs):
+'''def Anagram(strs):
     if len(str) == 0:
         return []
     ansmap = {}
     count = [0]*26
     for c in strs:
-        count[ord(c)- 'a'] +=1 
+        count[ord(c)- 'a'] +=1 '''
+
+#La methode est simple, il  
+    
+#leetcode 
+'''
+Given an integer array nums, return an array answer such that answer[i] equal to the product
+of all the elements of nums except nums[i]
+the time complexity should be O(n) without using division operation
+'''
+def excepself(nums):
+    result = []
+    for i in (range(len(nums))):
+        result.append(1)
+    pre = 1
+    post = 1
+
+    for i in range(len(nums)):
+        result[i] = pre
+        pre = nums[i] * pre
+
+    for i in range(len(nums) - 1, -1, -1): 
+        result[i] = result[i]*post
+        post = post*nums[i]
+
+    return result
+
+print(excepself([4,5,3]))
+
+
