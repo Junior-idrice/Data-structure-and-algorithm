@@ -126,7 +126,7 @@ print(string("listn","silent"))'''
 # using the idea of counting the numbers of characters and keep 
 # incrementing or decrementing
 
-
+'''
 def anagrams(s,t):
     alpha = [0]*26
     if len(s) != len(t):
@@ -140,4 +140,16 @@ def anagrams(s,t):
         if i !=0:
             return False
     return True
-print(anagrams("sam","ams"))
+print(anagrams("sam","ams"))'''
+
+
+#given an array of strings strs, group the anagrams together.
+#you can return the answer in any order
+
+
+ara = ['li','em','li','po','em','lp','li']
+print(ara)
+for i in ara:
+    i = sorted(i)
+    ara.append(i)
+print(ara)
