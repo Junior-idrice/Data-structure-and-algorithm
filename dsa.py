@@ -163,7 +163,7 @@ Given an integer array nums, return an array answer such that answer[i] equal to
 of all the elements of nums except nums[i]
 the time complexity should be O(n) without using division operation
 '''
-def excepself(nums):
+'''def excepself(nums):
     result = []
     for i in (range(len(nums))):
         result.append(1)
@@ -180,6 +180,35 @@ def excepself(nums):
 
     return result
 
-print(excepself([4,5,3]))
+print(excepself([4,5,3]))'''
 
+#------------------------ TOP K FREQUENCY ELEMENTS ---------------------#
+'''
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order
+'''
+# we will use HashMap + Heap(Priority Queue )
+import heapq
+def Top(nums, k):
+    if k == len(nums):
+        return nums
+    
+    count = {}
+    for n in nums:
+        count[n] = count.get(n,0) + 1
+    import heapq
+
+    heap = []
+
+    for n in count:
+        heapq.heappush(heap, (count[n], n))
+
+        if len(heap) > k:
+            heapq.heappop(heap)
+    ans = []
+    for i in range(k):
+        ans.append(heapq.heappop(heap)[1])
+
+    return ans
+
+print(Top([1, 2, 1, 3, 2, 1], 2))
 
