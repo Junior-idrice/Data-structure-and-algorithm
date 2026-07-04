@@ -212,3 +212,50 @@ def Top(nums, k):
 
 print(Top([1, 2, 1], 2))
 '''
+
+
+
+
+
+'''
+----leetcode 
+converting Roman numeral to Integers
+
+'''
+def RomansToInter(value):
+    values = {
+        "I":1, 
+        "V":5, 
+        "X":10, 
+        "L":50, 
+        "C":100, 
+        "D":500, 
+        "M":1000, 
+        "IV": 4, 
+        "IX": 9, 
+        "XL":40, 
+        "XC":90, 
+        "CD":400, 
+        "CM":900 
+    }
+    
+    
+    total = 0
+    i = 0
+
+    while i<len(value):
+        if i<len(value)-1:
+            twosymbols = value[i:i+2]
+            if twosymbols in values.keys():
+                total += values.get(twosymbols)
+                i += 2
+                continue
+
+
+        onesymbol = value[i:i+1]
+        total += values.get(onesymbol)
+        i +=1
+    
+    return sum 
+
+print(RomansToInter("MDXXI"))
