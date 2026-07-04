@@ -212,4 +212,3 @@ def Top(nums, k):
 
 print(Top([1, 2, 1], 2))
 '''
-print("this is the first man")
