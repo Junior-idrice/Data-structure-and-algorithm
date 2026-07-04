@@ -187,7 +187,7 @@ print(excepself([4,5,3]))'''
 Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order
 '''
 # we will use HashMap + Heap(Priority Queue )
-import heapq
+'''import heapq
 def Top(nums, k):
     if k == len(nums):
         return nums
@@ -210,5 +210,6 @@ def Top(nums, k):
 
     return ans
 
-print(Top([1, 2, 1, 3, 2, 1], 2))
+print(Top([1, 2, 1], 2))
 
+'''
