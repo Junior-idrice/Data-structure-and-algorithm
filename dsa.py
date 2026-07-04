@@ -221,7 +221,7 @@ print(Top([1, 2, 1], 2))
 ----leetcode 
 converting Roman numeral to Integers
 
-'''
+
 def RomansToInter(value):
     values = {
         "I":1, 
@@ -259,3 +259,9 @@ def RomansToInter(value):
     return sum 
 
 print(RomansToInter("MDXXI"))
+'''
+
+
+#leetcode 953
+# verifying an Alien Dictionary
+
