@@ -334,7 +334,7 @@ consecutive elements. You must write an algorithm that runs in O(n) time
 print(Longest([0,0,0,4,2,3,9,7,8,1,-1]))'''
 
 #--- Optimal solution using a HashSet
-
+'''
 def Longest(nums):
     if len(nums) == 0:
         return 0
@@ -357,3 +357,46 @@ def Longest(nums):
     return longest
 
 print(Longest([0,0,0,4,2,3,9,7,8,1,-1]))
+
+'''
+
+
+#---- leetcode 41
+#   Given an unsorted integer array nums, return the smallest missing positive integer
+# you must implement an algorithm that runs in O(n) time and uses constant extra space
+
+
+def FirstMissing(nums):
+
+    n = len(nums)
+    contains = 0
+    for i in range(len(nums)):
+        if nums[i] == 1:
+            contains += 1
+            break
+    if contains == 0:
+        return 1
+    
+    for i in range(len(nums)):
+        if nums[i]<=0 or nums[i]>n:
+            nums[i]=1
+    for i in range(len(nums)):
+        a = abs(nums[i])
+        
+        if a == n:
+            nums[0]  = -abs(nums[0])
+        else:
+            nums[a] = -abs(nums[a])
+
+    for i in range(1, n):
+        if nums[i] > 0:
+            return i
+    
+    if nums[0] > 0:
+        return n
+    
+    return n+1
+
+
+
+print(FirstMissing([-1,-5,-9]))
