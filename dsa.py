@@ -265,3 +265,38 @@ print(RomansToInter("MDXXI"))
 #leetcode 953
 # verifying an Alien Dictionary
 
+'''
+In an alien language, surprisingly, they also use English lowercase letters,
+but possibly in a different order.The order of the alphabet is some permutations of lovwercase letters
+
+Given a sequence of words written in the alien language, and the order of the alphabet, return true iff the given words are sortedlexicographically in this alien language
+'''
+
+def Alien(words, order):
+    orderMap = {}
+    for i in range(len(order)):
+        orderMap[order[i]] = i
+    
+    for i in range(len(words)-1):
+        for j in range(len(words[i])):
+
+            if (j>= len(words[i+1])):
+                return False
+            
+            if words[i][j] != words[i + 1][j]:
+                currentLetter = orderMap.get(words[i][j])
+                nextLetter = orderMap.get(words[i+1][j])
+
+                if nextLetter < currentLetter:
+                    return False
+                else:
+                    break
+
+
+    return True
+
+word1 = ["hello","leetcode"] 
+word2 = ["aa","bbb","aa"]
+order = "hlabcdefgijkmnopqrstuvwxyz"
+
+print(Alien(word2,order))
