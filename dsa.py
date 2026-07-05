@@ -271,7 +271,7 @@ but possibly in a different order.The order of the alphabet is some permutations
 
 Given a sequence of words written in the alien language, and the order of the alphabet, return true iff the given words are sortedlexicographically in this alien language
 '''
-
+'''
 def Alien(words, order):
     orderMap = {}
     for i in range(len(order)):
@@ -296,7 +296,30 @@ def Alien(words, order):
     return True
 
 word1 = ["hello","leetcode"] 
-word2 = ["aa","bbb","aa"]
+word2 = ["aa","bbb"]
 order = "hlabcdefgijkmnopqrstuvwxyz"
 
-print(Alien(word2,order))
+print(Alien(word2,order)) '''
+
+
+#----- Leetcode 128 --------
+# Longest Consecutive Sequence
+'''
+Given an unsorted array of integers nums, return the length of the longest 
+consecutive elements. You must write an algorithm that runs in O(n) time
+
+'''
+
+def Longest(array):
+    length  = 1
+    array = sorted(array)
+    print(array)
+    for i in range(len(array)-1):
+        if array[i]+1 == array[i+1]:
+            length +=1
+            
+    
+    return length
+
+print(Longest([0,0,0,4,2,3,9,7,8,1,-1]))
+
