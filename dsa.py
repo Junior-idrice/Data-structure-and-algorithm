@@ -309,17 +309,51 @@ Given an unsorted array of integers nums, return the length of the longest
 consecutive elements. You must write an algorithm that runs in O(n) time
 
 '''
-
-def Longest(array):
-    length  = 1
-    array = sorted(array)
-    print(array)
-    for i in range(len(array)-1):
-        if array[i]+1 == array[i+1]:
-            length +=1
-            
+# First approach is using sorting and the proceed
+'''def Longest(array):
+    if not array:
+        return 0
     
-    return length
+    array = sorted(array)
+    longest = 1
+    current = 1
+
+    for i in range(len(array) - 1):
+
+        if array[i] == array[i + 1]:
+            continue
+
+        elif array[i] + 1 == array[i + 1]:
+            current += 1
+            longest = max(longest, current)
+
+        else:
+            current = 1
+
+    return longest
+print(Longest([0,0,0,4,2,3,9,7,8,1,-1]))'''
+
+#--- Optimal solution using a HashSet
+
+def Longest(nums):
+    if len(nums) == 0:
+        return 0
+    
+    numSet = set(nums)
+
+    longest = 1
+    for i in numSet:
+        if i-1 in numSet:
+            continue
+        else:
+            currentNumber = i
+            currentSub = 1
+
+            while currentNumber + 1 in numSet:
+                currentNumber +=  1
+                currentSub +=1
+            longest = max(longest, currentSub)   
+
+    return longest
 
 print(Longest([0,0,0,4,2,3,9,7,8,1,-1]))
-
