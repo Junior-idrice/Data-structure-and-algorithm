@@ -413,7 +413,7 @@ you want to maximize your profit by choosing a single day to buy one stock and c
 return the maximum profit you can achieve from this transaction. if you cannot achieve any profit, return 0
 '''
 
-def BestTimeToByandSellStock(prices):
+'''def BestTimeToByandSellStock(prices):
     min = prices[0]
     profit = 0
 
@@ -424,5 +424,45 @@ def BestTimeToByandSellStock(prices):
 
     return profit 
 
-print(BestTimeToByandSellStock([7,1,5,3,6,4]))
- 
+print(BestTimeToByandSellStock([7,1,5,3,6,4]))'''
+
+
+# Leetcode 567
+# Permutation of String
+
+'''
+Given two string s1 and s2, return true if s2 contains a permutation of 
+s1, or false otherwise.
+In other words, return true if one of s1's permutation is the substring of s2
+
+'''
+
+def PermutationOfStrings(s1, s2):
+   if len(s1) > len(s2):
+      return False
+   
+   s1Map= [0]*26
+   s2Map= [0]*26
+
+   for i in range(len(s1)):
+      s1Map[ord(s1[i])- ord('a')] +=1
+      s2Map[ord(s2[i])- ord('a')] +=1
+    
+   for i in range(len(s2)-len(s1)):
+
+        if matches(s1Map, s2Map):
+            return True
+        
+        s2Map[ord(s2[i+len(s1)])- ord('a')] += 1
+        s2Map[ord(s2[i]) - ord('a')] -= 1
+      
+   return matches(s1Map,s2Map)
+
+def matches(s1Map,s2Map):
+    for i in range(26):
+        if s1Map[i] != s2Map[i]:
+            return False
+        
+    return True
+
+print(PermutationOfStrings("ab","eidbaooo"))
