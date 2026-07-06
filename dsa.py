@@ -397,3 +397,32 @@ def FirstMissing(nums):
     return n+1
 
 print(FirstMissing([-1,-5,-9]))'''
+
+
+
+
+
+#### SLIDING WINDOW, NEW TOPIC
+#leetcode 121
+
+'''
+You are given an array prices where prices[i] is the price of a given stock on the ith day
+
+you want to maximize your profit by choosing a single day to buy one stock and choosing a sifferent day in the future to sell that stocj
+
+return the maximum profit you can achieve from this transaction. if you cannot achieve any profit, return 0
+'''
+
+def BestTimeToByandSellStock(prices):
+    min = prices[0]
+    profit = 0
+
+    for i in range(len(prices)):
+        if prices[i]<min:
+            min = prices[i]
+        profit  = max(profit, prices[i]-min)
+
+    return profit 
+
+print(BestTimeToByandSellStock([7,1,5,3,6,4]))
+ 
