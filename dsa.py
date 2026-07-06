@@ -365,7 +365,7 @@ print(Longest([0,0,0,4,2,3,9,7,8,1,-1]))
 #   Given an unsorted integer array nums, return the smallest missing positive integer
 # you must implement an algorithm that runs in O(n) time and uses constant extra space
 
-
+'''
 def FirstMissing(nums):
 
     n = len(nums)
@@ -393,10 +393,7 @@ def FirstMissing(nums):
             return i
     
     if nums[0] > 0:
-        return n
-    
+        return n    
     return n+1
 
-
-
-print(FirstMissing([-1,-5,-9]))
+print(FirstMissing([-1,-5,-9]))'''
