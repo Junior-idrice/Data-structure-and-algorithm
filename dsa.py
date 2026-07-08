@@ -465,4 +465,4 @@ def matches(s1Map,s2Map):
         
     return True
 
-print(PermutationOfStrings("ab","eidbaooo"))
+print(PermutationOfStrings("ab","eidbaaooo"))
