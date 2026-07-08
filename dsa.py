@@ -436,7 +436,7 @@ s1, or false otherwise.
 In other words, return true if one of s1's permutation is the substring of s2
 
 '''
-
+'''
 def PermutationOfStrings(s1, s2):
    if len(s1) > len(s2):
       return False
@@ -465,4 +465,17 @@ def matches(s1Map,s2Map):
         
     return True
 
-print(PermutationOfStrings("ab","eidbaaooo"))
+print(PermutationOfStrings("ab","eidbaaooo"))'''
+
+
+# Leetcode 424
+# longest Repeating Character Replacement
+
+# you are given a string s and an integer K. you can choose any character of the string 
+# and change it to any other uppercase English character. You can perform this operation at most k times.
+
+#Return the length of the longest containing the same letter you can ger after performing the above
+#operations
+
+# A brute force approach will be to take all possible substrings, then start replacing 
+# and then get the one with the longest length
