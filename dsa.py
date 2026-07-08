@@ -479,3 +479,26 @@ print(PermutationOfStrings("ab","eidbaaooo"))'''
 
 # A brute force approach will be to take all possible substrings, then start replacing 
 # and then get the one with the longest length
+
+
+def characterReplacement(s, k):
+    count = [0] * 26      
+    left = 0
+    maxOccurrence = 0
+    longest = 0
+
+    for right in range(len(s)):
+        index = ord(s[right]) - ord('A')
+        count[index] += 1
+        maxOccurrence = max(maxOccurrence, count[index])
+
+        while (right - left + 1) - maxOccurrence > k:
+            count[ord(s[left]) - ord('A')] -= 1
+            left += 1
+
+        longest = max(longest, right - left + 1)
+
+    return longest
+
+print(characterReplacement("ABAB",2))
+
