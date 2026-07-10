@@ -501,4 +501,5 @@ def characterReplacement(s, k):
     return longest
 
 print(characterReplacement("ABAB",2))
+#This is the firsrt element of the people and the first people
 
