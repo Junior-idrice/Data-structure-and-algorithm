@@ -481,7 +481,7 @@ print(PermutationOfStrings("ab","eidbaaooo"))'''
 # and then get the one with the longest length
 
 
-def characterReplacement(s, k):
+'''def characterReplacement(s, k):
     count = [0] * 26      
     left = 0
     maxOccurrence = 0
@@ -502,4 +502,4 @@ def characterReplacement(s, k):
 
 print(characterReplacement("ABAB",2))
 #This is the firsrt element of the people and the first people
-
+'''
