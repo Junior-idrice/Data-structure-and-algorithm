@@ -503,3 +503,4 @@ print(PermutationOfStrings("ab","eidbaaooo"))'''
 print(characterReplacement("ABAB",2))
 #This is the firsrt element of the people and the first people
 '''
+## More question to come very soon and for the most part of all the elements behind the scence
